@@ -1,0 +1,5 @@
+[submodule "src/libs/wasmdoom"]
+	path = src/libs/wasmdoom
+	url = git@github.com:ranma42/wasmdoom.git
+	branch = workflow-hacks
+

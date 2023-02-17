@@ -1,0 +1,49 @@
+{
+  "name": "doom-wf",
+  "scripts": {
+    "lint": "eslint .",
+    "clean": "shx rm -rf ./dist && shx echo Done",
+    "copy-config-files": "copyfiles -u 1 ./src/**/*.yaml ./dist/",
+    "build": "npm run clean && npm run copy-config-files && rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript --bundleConfigAsCjs",
+    "pack": "workflow pack ./dist -o './dist/doom-wf.twf'",
+    "dist": "npm run build && npm run pack",
+    "upload": "workflow upload -u https://orn.e4s1.net:4001 -k 4ZTRZLQ4DUZ7TJNAH2HM526N6KMMJ51X -o f6171354-7ab7-4b4f-9ff9-85732e2c848d -r --disable-certificate-verification ./dist/doom-wf.twf"
+  },
+  "dependencies": {
+    "@ffmpeg/core": "^0.11.0",
+    "@ffmpeg/ffmpeg": "^0.11.6",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-wasm": "^6.1.2",
+    "@traent/workflow-lib": "^1.1.0",
+    "base64-js": "^1.5.1",
+    "emulators": "^0.73.8",
+    "h264-mp4-encoder": "^1.0.12",
+    "min-document": "^2.19.0",
+    "mp4-wasm": "^1.0.6",
+    "pdf-lib": "^1.17.1",
+    "pngjs": "^6.0.0",
+    "websocket-polyfill": "^0.0.3"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-inject": "^5.0.3",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-replace": "^5.0.2",
+    "@rollup/plugin-terser": "^0.4.0",
+    "@rollup/plugin-typescript": "^9.0.2",
+    "@traent/workflow-cli": "^1.1.11",
+    "@types/pngjs": "^6.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.32.0",
+    "@typescript-eslint/parser": "^5.32.0",
+    "copyfiles": "^2.4.1",
+    "eslint": "^8.21.0",
+    "eslint-plugin-import": "^2.26.0",
+    "glob": "^8.0.3",
+    "path": "^0.12.7",
+    "rollup": "^3.3.0",
+    "rollup-plugin-polyfill-node": "^0.12.0",
+    "shx": "^0.3.4",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
+  }
+}

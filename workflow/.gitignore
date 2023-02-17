@@ -1,0 +1,17 @@
+.DS_Store
+Thumbs.db
+*.swp
+node_modules/
+*.bak
+build/
+dist/
+
+### IDE files
+.vscode/*
+.idea/*
+*.iml
+
+### Allowed files
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json

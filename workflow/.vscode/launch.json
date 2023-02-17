@@ -1,0 +1,18 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Workflow",
+      "type": "node",
+      "request": "attach",
+      "address": "localhost",
+      "port": 4092,
+      "sourceMaps": true,
+      "remoteRoot": "/",
+      "localRoot": "${workspaceFolder}/dist",
+      "sourceMapPathOverrides": {
+        "*": "${workspaceFolder}/*"
+      }
+    }
+  ]
+}
